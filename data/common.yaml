@@ -15,11 +15,8 @@ fusioninventory::config_hash:
   proxy: ''
   user: ''
   password: ''
-  ca-cert-dir: ''
-  ca-cert-file: ''
   no-ssl-check: ''
   timeout: '180'
-  no-http: '0'
   logger: stderr
   logfacility: LOG_USER
   color: '0'
