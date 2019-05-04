@@ -1,7 +1,7 @@
 ---
 fusioninventory::manage_package: true
 fusioninventory::manage_config: true
-fusioninventory::deploy_mode: 'service'
+fusioninventory::run_mode: 'service'
 fusioninventory::additional_packages: []
 fusioninventory::config: '/etc/fusioninventory/agent.cfg'
 fusioninventory::config_hash:
