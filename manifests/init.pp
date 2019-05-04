@@ -21,8 +21,8 @@ class fusioninventory (
 
   file {$config:
     ensure  => file,
-    content => epp('fusioninventory/agent_config.epp')
-    require => Package[$package]
+    content => epp('fusioninventory/agent_config.epp'),
+    require => Package[$package],
   }
   case $run_mode {
     'service': {
