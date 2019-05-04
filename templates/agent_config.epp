@@ -3,5 +3,5 @@
   $my_config_hash = $fusioninventory::config_hash + $fusioninventory::additional_settings
   $my_config_hash.each |$key, $value| {
 -%>
-<%= $key %>=<=% $value %>
+<%= $key %>=<%= $value %>
 <% } -%>
