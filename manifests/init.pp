@@ -14,7 +14,7 @@ class fusioninventory (
   String $server,
   Boolean $no_proxy = true,
   Hash $config_hash,
-  [Hash $additional_settings = {},
+  Hash $additional_settings = {},
 ){
   ensure_packages($package)
   ensure_packages($additional_packages)
