@@ -12,6 +12,7 @@ class fusioninventory (
   Array $additional_packages,
   String $config,
   String $server,
+  String $service,
   Boolean $no_proxy = true,
   Hash $config_hash,
   Hash $additional_settings = {},
