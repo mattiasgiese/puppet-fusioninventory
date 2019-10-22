@@ -1,0 +1,4 @@
+---
+fusioninventory::package: fusioninventory-agent
+fusioninventory::service: fusioninventory-agent
+

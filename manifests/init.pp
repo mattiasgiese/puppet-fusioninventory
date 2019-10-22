@@ -17,19 +17,27 @@ class fusioninventory (
   Hash $config_hash,
   Hash $additional_settings = {},
 ){
-  ensure_packages($package)
-  ensure_packages($additional_packages)
-
-  file {$config:
-    ensure  => file,
-    content => epp('fusioninventory/agent_config.epp'),
-    require => Package[$package],
+  if $manage_package {
+    ensure_packages($package)
+    ensure_packages($additional_packages)
+  }
+  if $manage_config {
+    file {$config:
+      ensure  => file,
+      content => epp('fusioninventory/agent_config.epp'),
+    }
+    if $manage_package {
+      Package[$package] -> File[$config]
+    }
   }
   case $run_mode {
     'service': {
       service{$service:
         ensure => running,
         enable => true,
+      }
+      if $manage_config {
+        File[$config] ~> Service[$service]
       }
     }
   }
