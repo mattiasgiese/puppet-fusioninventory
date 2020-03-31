@@ -1,0 +1,6 @@
+---
+fusioninventory::additional_packages:
+  - []
+fusioninventory::package: fusioninventory-agent
+fusioninventory::service: fusioninventory-agent
+
