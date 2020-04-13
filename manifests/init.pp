@@ -9,7 +9,7 @@ class fusioninventory (
   Boolean $manage_config,
   Enum['service'] $run_mode,
   String $package,
-  Array $additional_packages,
+  Optional[Array] $additional_packages = undef,
   String $config,
   String $server,
   String $service,
@@ -19,7 +19,9 @@ class fusioninventory (
 ){
   if $manage_package {
     ensure_packages($package)
-    ensure_packages($additional_packages)
+    if $additional_packages {
+      ensure_packages($additional_packages)
+    }
   }
   if $manage_config {
     file {$config:
