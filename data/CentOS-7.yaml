@@ -1,0 +1,3 @@
+---
+fusioninventory::additional_packages:
+  - fusioninventory-agent-yum-plugin
